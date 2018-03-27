@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.offcn.mapper.ScMapper">
+    <insert id="SaveShuCai" parameterType="list">
+  	insert into shucai(s_name,s_minprice,s_avgprice,s_maxprice,s_type,s_unit,s_date) values
+  	<foreach collection="list" item="sc" separator=",">
+  		(#{sc.sname},#{sc.sminprice},#{sc.savgprice},#{sc.smaxprice},#{sc.stype},#{sc.sunit},#{sc.sdate})
+  	</foreach>
+  </insert>
+</mapper>
